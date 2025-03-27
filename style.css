@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f0f8ff;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #b2f2bb, #a5d8ff);
+}
+
+.titulo {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+h2,
+h3 {
+  color: #333;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 20px;
+}
+
+#mapaMentalImg {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.zoom-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: zoom-in;
+  border-radius: 10px;
+}
+
+.zoom-container.zoomed #mapaMentalImg {
+  cursor: grab;
+  transform: scale(2);
+}
+
+#mapaMentalImg:active {
+  cursor: grabbing;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #555;
+}
+
+footer a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ff66b2;
+}

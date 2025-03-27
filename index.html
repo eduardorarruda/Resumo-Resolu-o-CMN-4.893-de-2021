@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mapa Mental - Segurança da Informação</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="titulo">Resolução CMN 4.893 de 2021</h1>
+      <div id="mapa" class="content active">
+        <div class="zoom-container">
+          <img
+            id="mapaMentalImg"
+            src="/Resolução CMN 4.893 de 2021.png"
+            alt="Mapa Mental sobre Segurança da Informação"
+          />
+        </div>
+      </div>
+
+    <script>
+      var isZoomed = false;
+      var img = document.getElementById("mapaMentalImg");
+
+      img.addEventListener("click", function() {
+        var container = document.querySelector('.zoom-container');
+        isZoomed = !isZoomed;
+        if (isZoomed) {
+            container.classList.add('zoomed');
+        } else {
+            container.classList.remove('zoomed');
+        }
+      });
+
+      img.addEventListener("mousemove", function(e) {
+        if (isZoomed) {
+            var rect = img.getBoundingClientRect();
+            var offsetX = e.clientX - rect.left;
+            var offsetY = e.clientY - rect.top;
+            var percentX = offsetX / rect.width * 100;
+            var percentY = offsetY / rect.height * 100;
+            
+            img.style.transformOrigin = `${percentX}% ${percentY}%`;
+        }
+      });
+
+      img.addEventListener("mouseleave", function() {
+        if (isZoomed) {
+            img.style.transformOrigin = 'center center';
+        }
+      });
+    </script>
+  </body>
+</html>
